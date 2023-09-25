@@ -20,7 +20,7 @@ try:
 
 	#thumbnails
 	logging.info("Finding thumbnails...")
-	vid_thumbnails = re.findall(r"https://i.ytimg.com/vi/[A-Za-z0-9_]{11}/[A-Za-z0-9_]{9}.jpg\?sqp=-[A-Za-z0-9_]{45}", response_text)
+	vid_thumbnails = re.findall(r"https://i.ytimg.com/vi/[A-Za-z0-9_-]{11}/[A-Za-z0-9_]{9}.jpg\?sqp=-[A-Za-z0-9_]{45}", response_text)
 
 	#links
 	logging.info("Finding links...")
@@ -45,7 +45,7 @@ try:
 		vid_viewcounts.append(match1[0])
 
 	logging.info("Storing thumbnails...")
-	thumbnails = vid_thumbnails[0:10:2]
+	thumbnails = vid_thumbnails[0:20:2]
 	logging.info("Storing links...")
 	links = vid_links[0:10:1]
 	logging.info("Storing viewcounts...")
